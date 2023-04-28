@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="nav">
+          <h2>HEWAQ</h2>
+        </div>
+        <br>
+        <h1 style="text-align:center;">WHAT IS THIS WEB APPLICATION</h1><br>
+
+<p style="font-size:100%;text-align:center;font-family:'Lucida Console', 'Courier New', monospace;">Welcome to our Heatwave and AQI Prediction web portal! Our application aims to help you stay informed about the air quality and potential heatwaves in your area. Using cutting-edge neural network techniques, our application predicts the Air Quality Index and the likelihood of a heatwave occurrence in your region. Stay safe and plan your activities accordingly with our user-friendly and informative web app.</p>
+<br>
+<br>
+
+<h1 style="text-align:center;text-align:center;font-family:'Lucida Console', 'Courier New', monospace;">FIND YOUR HEAT WAVE OCCURENCE OF YOUR CITY AND AQI TILL 2024</h1>
+        <div class="main_elements">
+        <div class="temp_div">
+          <h3 style="color:#000000;">TEMPEATURE PREDICTION</h3>
+        <a href="/tempadi">ADILABAD</a>
+        <a href="/tempniz">NIZAMABAD</a>
+        <a href="/tempkham">KHAMMAM</a>
+        <a href="/tempkarim">KAIRMNAGAR</a>
+        <a href="/tempwar">WARANGAL</a>
+      </div>
+        <div class="aqi_div">
+          <h3 style="color:#000000;">CITIES AQI</h3>
+          <a href="/aqi">AQI DATA</a>
+          <a href="adilabadaqi/"><p>adilabad</p></a>
+          <a href="karimnagaraqi/"><p>karimnagar</p></a>
+          <a href="nizamabadaqi/"><p>nizamabad</p></a>
+          <a href="khammamaqi/"><p>khammam</p></a>
+          <a href="warangalaqi/"><p>warangal</p></a>
+            </div>
+          <div class="wave_div">
+          <h3 style="color:#000000;">HEATWAVE AND TEMPRATURE</h3>
+          <a href="adilabadwave/"><p>adilabad</p></a>
+          <a href="karimnagarwave/"><p>karimnagar</p></a>
+          <a href="nizamabadwave/"><p>nizamabad</p></a>
+          <a href="khammamwave/"><p>khammam</p></a>
+          <a href="warangalwave/"><p>warangal</p></a>
+          <div>
+        </div>
+       
+    </body>
+    <style>
+      *{
+        border:0;
+        margin:0;
+      }
+      body{
+        /*width:100vw;*/
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        background-color: rgb(255, 255, 255);
+      
+      }
+      .nav{
+        /*width:100vw;*/
+        height:10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+        background: black;
+        padding:10px;
+      }
+      .main_elements{
+        /*width:100vw;*/
+        height:100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+      }
+      .main_elements > div{
+        width:30vw;
+        height:50vh;
+        background:#00ECFF;
+        color:white;
+        display: flex;
+        /*border-color: #FF0000;*/
+        border: 5px solid black;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2%;
+      }
+      .main_elements > div > a{
+        color:white;
+        padding:5px;
+      }
+    </style>
+</html>

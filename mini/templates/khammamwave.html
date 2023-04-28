@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <h1>KHAMMAM wave finder</h1>
+      <h1>TEMPRATURE PLOT FOR CURRENT MONTH</h1>
+      <p>NUMBER OF HEAT WAVES THAT WOULD HAPPEN THIS MONTH IS {{numofwaves}}</p>
+      <div  class="souter">
+        <div class="smain">
+          <div class="sdiv">
+          <p><b style="color:white">WAVE START</b></p>
+          {% for x in wavestart %}
+          <div class="sinner"> {{ x }}</div>
+          {% endfor %}
+          </div>
+          <div class="sdiv">
+            <p><b  style="color:white">WAVE END</b></p>
+          
+            {% for y in waveend %}
+            <div class="sinner">  {{ y }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+     
+      <div>
+            {{ chart_div|safe }}
+      </div>
+    </body>
+    <style>
+      *{
+        border:0;
+        margin:0;
+      }
+      body{
+        width:100vw;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        background:skyblue;
+      
+      }
+      .main_elements{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .souter{
+        width:100vw;
+        height:auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .smain{
+        width:50vw;
+        height:auto;
+        display: flex;
+        flex-direction: row;
+        padding:10px;
+        background:rgb(16, 0, 240);
+        border:solid 3px black;
+        justify-content: center;
+        align-items: center;
+        
+        
+        /*column-gap: 10px;*/
+      }
+      .smain > .sdiv{
+        width: 200px;
+        height:50%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        /* color:white; */
+      }
+      .sinner{
+        width:200px;
+        height:50%;
+        background: skyblue;
+      }
+      h1{
+        text-align: center;
+      }
+    </style>
+</html>

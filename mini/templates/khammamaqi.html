@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <h1>KHAMMAM AQI</h1>
+      <div class="main_outer">
+        {% for i in adilabadaqi %}
+        <div class="main_inner">
+            <p>{{i.year}}</p>
+            <p class="aqi_values">{{i.aqi |floatformat:2}}</p>
+          <div>
+        </div>
+        
+      </div>
+      {% endfor %}
+      
+      <p></p>
+     <div>
+      <h1>year 2024</h1>
+      {% for i in predictedyear %}
+      <p>{{i.year}}</p>
+      <p>{{i.aqi |floatformat:2}}</p>
+      {% endfor %}
+      <h1>PLOT for 2023 and 2024</h1>
+      <div>
+            {{ chart_div_2024|safe }}
+      </div>
+      <h1>PLOT for entire data</h1>
+      <div>
+            {{ chart_div|safe }}
+      </div>
+    </div>
+    </body>
+    <style>
+      *{
+        border:0;
+        margin:0;
+      }
+      body{
+        width:100vw;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+      
+      }
+      .main_elements{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .main_outer{
+        width:100vw;
+        height: 100vh;
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        overflow-x: scroll;
+        row-gap: 10px;
+        column-gap: 10px;
+        padding:10px;
+        
+        background: rgb(54, 54, 233);
+      }
+
+      .main_inner{
+        width:100px;
+        height:100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: red;
+      }
+      
+    </style>
+    <script>
+      let indiv = document.querySelectorAll(".main_inner")
+      console.log(indiv[10])
+      let aqiv = document.querySelectorAll(".aqi_values")
+      console.log(aqiv[10].textContent)
+      for (i = 0; i < aqiv.length; i++) {
+        let temp = parseFloat(aqiv[i].textContent)
+        if(temp>0 && temp <=50){
+          indiv[i].style.background="green"
+        }
+        else if(temp>50 && temp<=100){
+          indiv[i].style.background="yellow"
+        }
+        else if(temp>100&&temp<=150){
+          indiv[i].style.background="orange"
+        }
+        else if(temp>150&&temp<=200){
+          indiv[i].style.background="red"
+        }
+
+      
+} 
+    </script>
+</html>
