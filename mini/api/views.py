@@ -47,8 +47,34 @@ def ALLTEMPLSTMkarimnagarlist(request):
     serializer=ALLTEMP_karimnagar_LSTMSerializer(tempvals, many=True)
     return Response(serializer.data)
 
-'''
 @api_view(['GET'])
-districts = ["adilabad","karimnagar","warangal","khammam","nizamabad"]
-    readings = AQI_PROPHET.objects.filter(district__in=districts)
-'''
+def AQIPhrophetadilabad(request):
+    values=AQI_PROPHET.objects.filter(district="adilabad")
+    serializer=AQI_PROPHETSerializer(values,many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def AQIPhrophetkarimnagar(request):
+    values=AQI_PROPHET.objects.filter(district="karimnagar")
+    serializer=AQI_PROPHETSerializer(values,many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def AQIPhrophetkhammam(request):
+    values=AQI_PROPHET.objects.filter(district="khammam")
+    serializer=AQI_PROPHETSerializer(values,many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def AQIPhrophetwarangal(request):
+    values=AQI_PROPHET.objects.filter(district="warangal")
+    serializer=AQI_PROPHETSerializer(values,many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def AQIPhrophetnizamabad(request):
+    values=AQI_PROPHET.objects.filter(district="nizamabad")
+    serializer=AQI_PROPHETSerializer(values,many=True)
+    return Response(serializer.data)
+    #districts = ["adilabad","karimnagar","warangal","khammam","nizamabad"]
+
